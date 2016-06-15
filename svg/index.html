@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>S V G</title>
+    <style>
+        .my-svg {
+            background-color: #cfcfcf;
+            border: solid 2px green;
+            width: 100%;
+            height: 100%;
+        }
+
+        .eng {
+            stroke: #999999;
+            stroke-width: 1;
+            fill: #88aa33;
+            /*-moz-transform: scale(1,1);
+        -ms-transform: scale(1,1);
+        -o-transform: scale(1,1);
+        -webkit-transform: scale(1,1);
+        transform: scale(1,1);*/
+            zoom: 1;
+            -moz-transition: all ease-out 300ms;
+            -o-transition: all ease-out 300ms;
+            -webkit-transition: all ease-out 300ms;
+            transition: all ease-out 300ms;
+        }
+
+            .eng:hover {
+                fill: red;
+                cursor: pointer;
+                /*transform: scale(1.1,1.1);*/
+                zoom: 1.1;
+            }
+
+        .tooltip {
+            display: none;
+            position: absolute;
+            top: 122px;
+            left: 200px;
+            width: 200px;
+            height: 340px;
+            background-color: white;
+            border: solid 1px #999999;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>SVG</h1>
+
+    <div style="width: 80%; height: 555px; border:solid 1px red">
+        <svg class="my-svg">
+
+            <g transform="scale(0.05,0.05)"
+               fill="#345533" stroke="none">
+                <path d="M4305 4781 c-87 -25 -153 -57 -201 -96 -23 -19 -203 -206 -400 -415
+            l-359 -380 -1453 0 c-846 0 -1460 -4 -1470 -9 -9 -5 -59 -49 -110 -97 l-93
+            -87 3 -50 3 -49 1055 -344 c696 -227 1059 -350 1068 -361 31 -42 15 -63 -297
+            -398 -167 -179 -312 -330 -322 -336 -10 -5 -191 -9 -435 -9 l-417 0 -114 -113
+            c-109 -106 -114 -114 -109 -145 3 -19 10 -40 16 -47 6 -7 125 -41 263 -75 139
+            -33 265 -66 280 -72 26 -10 47 -35 47 -55 0 -5 -31 -46 -69 -91 -78 -92 -95
+            -130 -95 -220 -1 -58 2 -66 27 -88 23 -19 39 -24 86 -24 88 0 148 25 208 87
+            29 29 64 58 78 63 40 15 72 -3 84 -47 6 -21 36 -141 67 -268 49 -196 62 -234
+            85 -257 45 -46 62 -38 180 79 l108 108 6 260 c3 143 8 342 11 441 l6 181 325
+            304 c179 167 334 308 346 312 55 21 48 39 413 -1072 188 -573 350 -1051 360
+            -1062 37 -41 73 -23 183 93 81 84 85 91 92 146 4 31 8 692 8 1469 l1 1412 410
+            393 c461 441 456 435 485 602 26 153 14 239 -41 288 -57 50 -201 63 -319 29z" />
+            </g>
+            <circle cx="50" cy="50" r="40" class="eng" />
+            <circle cx="150" cy="150" r="40" class="eng" />
+        </svg>
+    </div>
+
+    <div class="tooltip">
+        <h2>Tooltip</h2>
+        Some info<br />
+        Here
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script>
+    <script>
+    $(".eng").click(function () {
+        //alert(this);
+        $(".tooltip").show();
+    });
+    </script>
+</body>
+</html>
+
