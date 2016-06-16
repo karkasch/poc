@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -46,12 +46,129 @@
             border: solid 1px #999999;
             padding: 10px;
         }
+
+        .frame {
+            
+        }
+
+        .components-container {
+            width: 200px;
+            height: 200px;
+            position: relative;
+            -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+        .airframe {
+            
+            position: absolute;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        .engine {
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            -moz-transform: scale(0.3,0.3);
+            -ms-transform: scale(0.3,0.3);
+            -o-transform: scale(0.3,0.3);
+            -webkit-transform: scale(0.3,0.3);
+            transform: scale(0.3,0.3);
+            border-radius: 50%;
+            display: inline-block;
+            -webkit-transition: all ease-out 300ms;
+            -moz-transition: all ease-out 300ms;
+            -ms-transition: all ease-out 300ms;
+            -o-transition: all ease-out 300ms;
+            transition: all ease-out 300ms;
+        }
+
+        .engine:hover {
+            background-color:rgba(255, 255, 0, 0.46);
+            cursor: pointer;
+        }
+
+        .eng1 {
+            -moz-transform-origin: 60px 75px;
+            -ms-transform-origin: 60px 75px;
+            -o-transform-origin: 60px 75px;
+            -webkit-transform-origin: 60px 75px;
+            transform-origin: 60px 75px;
+        }
+
+        .eng2 {
+            -moz-transform-origin: 143px 78px;
+            -ms-transform-origin: 143px 78px;
+            -o-transform-origin: 143px 78px;
+            -webkit-transform-origin: 143px 78px;
+            transform-origin: 143px 78px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* ----------------------------------------- */
+@keyframes uilandin {
+    0% {
+            -moz-transform: translate(-10px,92px);
+            -ms-transform: translate(-10px,92px);
+            -o-transform: translate(-10px,92px);
+            -webkit-transform: translate(-10px,92px);
+            transform: translate(-10px,92px);
+        }
+
+    100% {
+        -moz-transform: translate(0,0);
+            -ms-transform: translate(0,0);
+            -o-transform: translate(0,0);
+            -webkit-transform: translate(0,0);
+            transform: translate(0,0);
+    }
+}
+
+        .ui-landin {
+            animation-name: uilandin;
+            animation-duration: 500ms;
+            animation-timing-function: ease-out;
+        }
+
+
+@keyframes uishowin {
+    from {
+            transform: scale(0,0)
+        }
+
+    50% {
+        transform: scale(0,0)
+    }
+    
+    100% {
+        transform: scale(0.3,0.3)
+    }
+}
+
+        .ui-showin {
+            
+            animation-name: uishowin;
+            animation-duration: 800ms;
+            animation-timing-function: ease-out;
+            
+        }
     </style>
 </head>
 <body>
-    <h1>SVG</h1>
+<h1>SVG</h1>
 
-    <div style="width: 80%; height: 555px; border:solid 1px red">
+<button onclick="$('.frame').toggleClass('hidden')">Toggle</button>
+
+<div style="display:none; width: 80%; height: 555px; border:solid 1px red">
         <svg class="my-svg">
 
             <g transform="scale(0.05,0.05)"
@@ -74,8 +191,12 @@
         </svg>
     </div>
 
-    <div>
-        <img src="airframe2.svg" />
+    <div class="frame hidden">
+        <div class="components-container">
+            <img src="airframe.svg" class="airframe ui-landin" />
+            <img src="engine.svg" class="engine eng1 ui-showin" />
+            <img src="engine.svg" class="engine eng2 ui-showin" />
+        </div>
     </div>
 
     <div class="tooltip">
