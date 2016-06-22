@@ -14,7 +14,19 @@ class SvgGantt {
         var d = new Date();
         this.startDate = new Date(d.getFullYear(), d.getMonth() - 3, 1);
 
+        this.adjustViewbox();
         console.log("this", this);
+
+        $(window).resize(() => {
+            this.adjustViewbox();
+        });
+    }
+
+    adjustViewbox() {
+        var svg = $(this.selector);
+        var parent = 
+        $(this.selector).attr("viewbox", `0 0 ${svg.parent().width()} ${svg.parent().height()}`)
+
     }
 
     setView(view) {
@@ -70,9 +82,11 @@ class SvgGantt {
             }
         }
 
-        $(this.selector).html(html);
+        $(this.selector).find(".chart-content-svg").html(html);
     }
 }
+
+
 
 var sgantt = new SvgGantt({ selector: ".chart" });
 

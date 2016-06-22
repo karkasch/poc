@@ -18,11 +18,19 @@
             margin: 0;
             font-weight: 100;
         }
-        .chart-container {
-            height: calc(100% - 50px);
-            overflow-x: auto;
-        }
         .chart {
+            height: calc(100% - 50px);
+            /*overflow-x: auto;*/
+        }
+        .chart-header {
+            width: 25%;
+            display: inline-block;
+        }
+        .chart-content {
+            width: 75%;
+            display: inline-block;
+        }
+        .chart-content-svg {
             display: block;
             width: 100%;
             height: 100%;
@@ -38,30 +46,35 @@
             stroke: #37a10b;
             stroke-width: 1;
         }
-    </style>
+    </style> 
 </head>
 <body>
 <div>
-    <h1>Header</h1>
+    <h1>Header 2</h1>
 </div>
-<div class="chart-container">
-    <svg class="chart" viewbox="90 0 1920 929" preserveAspectRatio="none">
-        <svg x="10" y="10">
-            <rect width="100" height="30"></rect>
-            <text x="10" y="20" fill="#ffffff" stroke-width="0.2" font-size="13px">Shop visit</text>
-        </svg>
-        <rect x="140" y="10" width="100" height="30" />
-        <rect x="3270" y="10" width="100" height="30" />
-        <rect x="10" y="50" width="100" height="30" />
-        <rect x="140" y="50" width="90" height="30" />
-        <rect x="270" y="50" width="80" height="30" />
-        <rect x="470" y="50" width="100" height="30" />
+<div class="chart">
+    <div class="chart-header">
+        123
+    </div>
+    <div class="chart-content">
+        <svg class="chart-content-svg" xxviewbox="90 0 1920 929" preserveAspectRatio="none">
+            <svg x="10" y="10">
+                <rect width="100" height="30"></rect>
+                <text x="10" y="20" fill="#ffffff" stroke-width="0.2" font-size="13px">Shop visit</text>
+            </svg>
+            <rect x="140" y="10" width="100" height="30" />
+            <rect x="3270" y="10" width="100" height="30" />
+            <rect x="10" y="50" width="100" height="30" />
+            <rect x="140" y="50" width="90" height="30" />
+            <rect x="270" y="50" width="80" height="30" />
+            <rect x="470" y="50" width="100" height="30" />
 
-        <svg x="10" y="100">
-            <rect width="100" height="30"></rect>
-            <text x="10" y="20" fill="#ffffff" stroke-width="0.2" font-size="13px">Shop visit</text>
+            <svg x="10" y="100">
+                <rect width="100" height="30"></rect>
+                <text x="10" y="20" fill="#ffffff" stroke-width="0.2" font-size="13px">Shop visit</text>
+            </svg>
         </svg>
-    </svg>
+    </div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script>
